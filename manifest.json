@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Remove store telon",
+  "version": "1.0",
+  "description": "Remove telon in vtex store",
+  "icons": {
+    "128": "icon.svg"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab", "scripting", "tabs", "storage", "webNavigation"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "host_permissions": ["*://*.921.com.ar/"]
+}
